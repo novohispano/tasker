@@ -5,6 +5,9 @@ namespace :printer do
       puts "The tests fail."
     else
       puts "The tests passed."
+      puts "Pushing to Github"
+      system("git push origin master")
+      puts "Done."
     end
   end
 end

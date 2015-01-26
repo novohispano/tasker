@@ -1,7 +1,11 @@
 require 'test_helper'
 
 class TaskTest < ActiveSupport::TestCase
-  test "validates name" do
+  test "it is true" do
     assert true
+  end
+
+  test "it is false" do
+    refute true
   end
 end
