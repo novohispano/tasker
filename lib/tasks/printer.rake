@@ -23,10 +23,14 @@ namespace :deploy do
     puts "Done."
 
     puts "Running migrations"
-    if "GEM_HOME='' BUNDLE_GEMFILE='' GEM_PATH='' RUBYOPT='' /usr/local/heroku/bin/heroku run rake db:migrate" == false
+    if heroku("rake db:migrate") == false
       puts "Could't run migrations"
       break
     end
     puts "Done."
   end
+end
+
+def heroku(command)
+  system("GEM_HOME='' BUNDLE_GEMFILE='' GEM_PATH='' RUBYOPT='' /usr/local/heroku/bin/heroku run #{command}")
 end
