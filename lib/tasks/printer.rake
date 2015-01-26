@@ -1,6 +1,6 @@
-namespace :printer do
-  desc "Executes printing command"
-  task run: :environment do
+namespace :deploy do
+  desc "Deploys app to Github & production."
+  task all: :environment do
     if system("rake test:all") == false
       puts "The tests fail."
       break
